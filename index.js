@@ -2,9 +2,7 @@ const path = require("path");
 const express = require("express");
 const app = express(); // create express app
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
-});
+app.use(express.static("public"));
 
 // start express server on port 3000
 app.listen(3000, () => {
